@@ -1,10 +1,15 @@
 # Step-by-step install & setup
 
 1) Prerequisites
+
 ● Shopify Partner account and a development store (use Partner Dashboard → Create dev store).
+
 ● Node.js (LTS) and npm — download from nodejs.org or use nvm-windows.
+
 ● Git (Git for Windows).
+
 ● VS Code (recommended editor).
+
 Check installs:
 
 ```sh
