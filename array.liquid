@@ -1,1 +1,40 @@
-ECHO is on.
+{% comment %} array in liquid 
+        An array is a collection of items stored in a single variable. 
+        Each item in the array can be accessed using its index (position) in the array.
+
+        syntax : 
+                {% assign array_name = [ item1, item2, item3, ... ] %}
+
+        arrays are created with the {% assign %} keyword
+        arrays are accessed with the {% for %} loop
+        arrays can be modified with the {% assign %} keyword
+        arrays can be sorted with the {% sort %} filter
+        arrays can be filtered with the {% where %} filter
+        arrays can be sliced with the {% slice %} filter
+        arrays can be joined with the {% join %} filter
+        arrays can be split with the {% split %} filter
+array methods : 
+        1. array.size
+        2. array.length
+        3. array.first
+        4. array.last
+        5. array.push
+        6. array.pop
+        7. array.shift
+        8. array.unshift
+        9. array.join
+{% endcomment %}
+
+{% assign my_array = [ 11, 23, 44, 67, 69, 90, 99 ] %}
+Array Size : {{ my_array.size }} <br>
+Array Length : {{ my_array.length }} <br>
+First Element : {{ my_array.first }} <br>
+Last Element : {{ my_array.last }} <br>
+{% assign pushed_array = my_array | push: 100 %}
+
+{{ product.title }}
+
+{% for title in product.title %}
+        {{ title }}
+        <br>
+{% endfor %}

@@ -1,1 +1,22 @@
-ECHO is on.
+{% comment %} variable
+        variable is a way to store data in code
+                rules for variables :
+                variable  name must start with a letter and can only contain letters, numbers, and underscores
+                variable names are case sensitive
+                variable names cannot be the same as a liquid keyword
+                variable starts with {% assign %} keyword 
+
+        syntax :
+                {% assign variable_name = value %}
+                {{ variable_name }}
+
+{% endcomment %}
+{% assign my_variable = "hello from the tutorial liquid file" %}
+{{ my_variable }}
+
+{% comment %} this method is print the value of the variable with white space around it {% endcomment %}
+<br>
+
+{% assign new_variable = "this is another variable from the tutorial liquid file" %}
+{{- new_variable -}}
+{% comment %} this method is print the value of the variable without white space around it {% endcomment %}

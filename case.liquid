@@ -1,1 +1,34 @@
-ECHO is on.
+{% comment %} case in liquid
+
+case is used to simplify multiple if-else statements.
+It evaluates a single expression against multiple possible values (when clauses).
+If a match is found, the corresponding block of code is executed.
+If no matches are found, the else clause is executed (if provided).
+
+syntax:
+        {% case expression %}
+                {% when value1 %}
+                        <!-- code to execute if expression equals value1 -->
+                {% when value2 %}
+                        <!-- code to execute if expression equals value2 -->
+                {% else %}
+                        <!-- code to execute if no matches are found -->
+{% endcase %}
+
+{% endcomment %}
+{% if product.type != blank %}
+        {% case product.type %}
+                {% when "Tea" %}
+                        <div>
+                                <h3>Tea</h3>
+                        </div>
+                {% when "Coffee" %}
+                        <div>
+                                <h3>Coffee</h3>
+                        </div>
+                {% else %}
+                        <div>
+                                <h3>Other Beverages</h3>
+                        </div>
+        {% endcase %}
+{% endif %}

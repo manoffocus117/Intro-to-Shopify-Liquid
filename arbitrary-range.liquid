@@ -1,1 +1,17 @@
-ECHO is on.
+{% comment %} loop through an arbitrary range 
+ 
+arbitrary range is a way to loop through a specific set of numbers instead of an array or collection.
+In this example, we loop through the numbers 10 to 15 and display each number as a message.
+
+syntax:
+        {% for variable in (start..end) %}
+                <!-- loop body -->
+        {% endfor %}
+
+{% endcomment %}
+
+{% for message in ( 1..15 ) %}
+        <P>
+                hello {{ message }}, {{ forloop.index }}
+        </P>
+{% endfor %}

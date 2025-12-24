@@ -1,1 +1,37 @@
-ECHO is on.
+{% comment %} conditional in liquid
+
+cnditional statements are used to perform different actions based on different conditions.
+liquid provides conditional statements to control the flow of your templates based on certain conditions.
+
+liquid supports the following conditional statements :
+        1. if
+        2. elsif
+        3. else
+conditional operators :
+        1. == (equal to)
+        2. != (not equal to)
+        3. > (greater than)
+        4. < (less than)
+        5. >= (greater than or equal to)
+        6. <= (less than or equal to)
+
+{% endcomment %}
+
+{% assign conditional_value = 150 %}
+
+{% if conditional_value >= 150 %}
+        <h4>the value of the variable is greater than or equal to 150</h4>
+        {% elsif conditional_value < 150 %}
+                <h4>the value of the variable is less than 150</h4>
+        {% else %}
+        <h4>invalid value</h4>
+{% endif %}
+
+{% assign money = 500 %}
+{% if money >= 500 %}
+        <h4>you can eat biryani with coke</h4>
+        {% elsif money < 400 %}
+                <h4>coke is 30 taka</h4>
+        {% else %}
+                <h4>tomar pocket khali</h4>
+{% endif %}

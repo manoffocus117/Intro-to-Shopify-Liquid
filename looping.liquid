@@ -1,1 +1,59 @@
-ECHO is on.
+{% comment %} loops in liquid 
+loop is used to iterate over a collection of items and perform a block of code for each item in the collection.
+
+types of loops in liquid : 
+        1. for loop
+        2. cycle
+        3. tablerow
+loop control statements :
+        1. break : used to exit the loop prematurely
+        2. continue : used to skip the current iteration and move to the next iteration
+loop object :
+        1. forloop.index : return the current iteration of the loop (starting from 1)
+        2. forloop.index0 : return the current iteration of the loop (starting from 0)
+        3. forloop.rindex : return the number of iteration remaining in the loop (starting from 1)
+        4. forloop.rindex0 : return the number of iteration remaining in the loop (starting from 0)
+        5. forloop.first : return true if the current iteration is the first iteration
+        6. forloop.last : return true if the current iteration is the last iteration
+        7. forloop.length : return the total number of items in the loop
+        8. forloop.column : return the current column number in a tablerow loop (starting from 1)
+        9. forloop.column0 : return the current column number in a tablerow loop (starting from 0)
+        10. forloop.rcolumn : return the number of column remaining in a tablerow loop (starting from 1)
+        11. forloop.rcolumn0 : return the number of column remaining in a tablerow loop (starting from 0)
+        12. forloop.rows : return the total number fo rows in a tablerow loop
+        13. forloop.cols : return the total number of column in a tablerow loop
+        14. forloop.parentloop : return the parent loop object in a nested loop
+        15. forloop.parentloop.index : return the current iteration of the parent loop (starting from 1)
+        16. forloop.depth : return the depth of the current loop (starting from 1)
+        17. limit : used to limit the number of items in the loop
+        18. offset : used to skip a number of items in the loop
+{% endcomment %}
+
+{% for product in collections.products limit: 5 offset: 0 %}
+        <h2 
+                style="
+                        {% if forloop.first %}
+                                color: red; font-size: 3rem;
+                        {% elsif forloop.last %}
+                                color: blue; font-size : 2rem;
+                        {% endif %}
+                "
+        >
+                {{ product.title }}
+        </h2>
+        {% if product.tags.size > 0 %}
+                <h4>tags :</h4>
+                <ul>
+                        {% for tag in product.tags %}
+                                {% if tag == "Cake" %}
+                                        {% break %}
+                                {% endif %}
+                                <li>
+                                        {{ forloop.parentloop.index }} : {{ tag }}
+                                </li>
+                        {% endfor %}
+                </ul>
+        {% endif %}
+        {% else %}
+                <p>No products found in this collection.</p>
+{% endfor %}

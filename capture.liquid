@@ -1,1 +1,17 @@
-ECHO is on.
+{% comment %} capture in liquid
+
+capture is used to capture a block of text and store it in a variable.
+
+syntax:
+        {% capture variable_name %}
+                block of text
+        {% endcapture %}
+
+{% endcomment %}
+
+{% capture greeting %}
+        <div>
+                <h3>Hello, welcome to our store!</h3>
+        </div>
+{% endcapture %}
+{{ greeting }}

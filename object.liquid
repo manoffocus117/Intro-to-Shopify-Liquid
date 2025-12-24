@@ -1,1 +1,36 @@
-ECHO is on.
+{% comment %} object in liquid 
+
+object is a data type that represents a collection of key-value pairs. 
+An object can contain various types of data, including strings, numbers, arrays, and even other objects.
+Objects are commonly used to represent complex data structures, such as products, customers, or orders in e-commerce platforms.
+objects are defined using curly braces {} and key-value pairs are separated by commas.
+
+syntax : 
+        {% assign my_object = {"key1": "value1", "key2": "value2", "key3": "value3"} %}
+
+object methods : 
+        1. object.keys
+        2. object.values
+        3. object.size
+        4. object.merge
+        5. object.delete
+        6. object.has_key?
+        7. object.to_json
+        8. object.to_yaml
+        9. object.each
+        10. object.each_key
+        11. object.each_value
+        12. object.sort_by_key
+        13. object.sort_by_value
+
+{% endcomment %}
+
+{% assign my_object = {"name": "John", "age": 30, "city": "New York"} %}
+{{ my_object.name }} <br>
+{{ my_object.age }} <br>
+{{ my_object.city }} <br>
+
+{% comment %} Iterate over object keys and values {% endcomment %}
+{% for key in my_object %}
+  {{ key }} : {{ my_object[key] }} <br>
+{% endfor %}

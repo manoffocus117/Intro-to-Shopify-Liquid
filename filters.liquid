@@ -1,1 +1,42 @@
-ECHO is on.
+{% comment %} filter in liquid 
+filters are used to modify the output of a variable or a string in liquid. they are applied using the pipe character (|) and can be chained together.
+liquid supports a wide range of filters that can be used to manipulate strings, numbers, arrays, and other data types.
+
+types of filters :
+        1. string filters: used to manipulate strings (e.g., upcase, downcase, capitalize, truncate).
+        2. number filters: used to perform operations on numbers (e.g., plus, minus,
+        3. array filters: used to manipulate arrays (e.g., join, sort, uniq).
+        4. date filters: used to format dates (e.g., date, date_modify).
+        5. money filters: used to format monetary values (e.g., money, money_with_currency
+        6. url filters: used to manipulate URLs (e.g., url_encode, url_decode).
+        7. other filters: various other filters for different purposes (e.g., default, escape, newline_to_br).
+
+{% endcomment %}
+
+{% comment %} Example usage of filters in liquid {% endcomment %}
+
+{% assign my_string = "hello world" %}
+{{ my_string | upcase }}  {# Output: HELLO WORLD #}
+{{ my_string | capitalize }}  {# Output: Hello world #}
+{{ my_string | truncate: 5 }}  {# Output: hello... #}
+
+{% assign my_number = 10 %}
+{{ my_number | plus: 5 }}  {# Output: 15 #}
+{{ my_number | minus: 3 }}  {# Output: 7 #}
+
+{% assign my_array = "apple,banana,cherry" | split: "," %}
+{{ my_array | join: " & " }}  {# Output: apple & banana & cherry #}
+{{ my_array | sort | join: ", " }}  {# Output: apple, banana, cherry #}
+
+{% assign my_date = "2024-01-01" %}
+{{ my_date | date: "%B %d, %Y" }}  {# Output: January 01, 2024 #}
+
+{% assign my_money = 1999 %}
+{{ my_money | money }}  {# Output: $19.99 #}
+{{ my_money | money_with_currency }}  {# Output: $19.99 USD #}
+
+{% assign my_url = "https://example.com/search?query=liquid filters" %}
+{{ my_url | url_encode }}  {# Output: https%3A%2F%2Fexample.com%2Fsearch%3Fquery%3Dliquid+filters #}
+
+{% assign empty_value = "" %}
+{{ empty_value | default: "Default Value" }}  {# Output: Default Value #}

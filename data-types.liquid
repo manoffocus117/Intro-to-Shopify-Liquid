@@ -1,1 +1,16 @@
-ECHO is on.
+{% comment %} data types in liquid
+there are 6 types of data in liquid
+        1. string ( a sequence of characters enclosed in single or double quotes. it is used to store text data )
+        2. number (integer or floating-point)
+        3. boolean (true or false) 
+        4. nil (an undefined value)
+        5. array (a list of variables of any type)
+        6. empty (an empty object is returned if you try to access a variable that is defined but has no value) 
+
+{% endcomment %}
+{% comment %} array : an array is a list of variables of any type, enclosed in square brackets and separated by commas. {% endcomment %}
+{% assign my_array = ["apple", "banana", "cherry", 123, true, nil] %}
+
+{% for item in my_array %}
+        {{ item }}<br>
+{% endfor %}
