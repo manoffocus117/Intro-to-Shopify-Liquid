@@ -1,1 +1,7 @@
-ECHO is on.
+{% assign languages = "html|orange, css|blue, javascript|yellow" | split: ',' %}
+
+{% for language in languages %}
+        {% assign language_name = language | split: '|' |  first %}
+        {% assign language_color = language | split: '|' | last %}
+        <p style="color: {{language_color}};">{{ language_name }}</p>
+{% endfor %} {% endcomment %}

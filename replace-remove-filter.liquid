@@ -1,0 +1,11 @@
+{% comment %} replace and remove filter {% endcomment %}
+
+{% assign my_text = "this is some new extra large text i dont know what am i writing" %}
+
+<p>{{ my_text }}</p>
+<p>{{ my_text |  replace: "dont", "do not" }}</p>
+<p>{{ my_text |  replace_first: "dont", "do not" }}</p>
+<p>{{ my_text |  replace_first: "dont", "string" }}</p>
+
+
+<p>{{ my_text |  remove_first: "dont" }}</p>

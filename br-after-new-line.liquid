@@ -1,0 +1,10 @@
+{% comment %} new_line_to_br used to add break after a line {% endcomment %}
+
+{% assign multiline_text = "
+        this is the first line 
+        this is the second line 
+        this is the third line 
+        this is the fourth line
+" |  newline_to_br %}
+
+<P>{{ multiline_text }}</P>

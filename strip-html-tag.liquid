@@ -1,0 +1,5 @@
+{% comment %} strip html tags  {% endcomment %}
+
+{% assign my_html_tags = "<p style='color: red'>hello world</p>" %}
+
+{{ my_html_tags |  strip_html }}

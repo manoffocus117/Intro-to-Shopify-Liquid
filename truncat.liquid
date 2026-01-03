@@ -1,0 +1,10 @@
+{% comment %} truncate
+1. truncate 
+2. truncatewords  
+
+{% endcomment %}
+
+{% assign very_long_string = "this is some very long text that will be trimmed" %}
+
+<p>{{ very_long_string |  truncate: 10 }}</p>
+<p>{{ very_long_string |  truncatewords: 5 }}</p>

@@ -1,0 +1,21 @@
+{% comment %} string filter
+
+1. upcase 
+2. downcase
+3. capitalize
+4. append 
+5. strip 
+
+{% endcomment %}
+
+{% assign my_string = "hello world " %}
+
+{% assign some_more_text = "some more text to be added" %}
+
+<h3>{{ my_string | append: some_more_text }}</h3>
+
+{% assign text_with_whitespace = "this is some text with whitespace          " %}
+
+<h3>{{ text_with_whitespace | strip |  append: "!" }}</h3>
+
+

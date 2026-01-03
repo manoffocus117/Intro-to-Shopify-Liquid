@@ -1,0 +1,18 @@
+{% comment %} sum filter {% endcomment %}
+
+{% assign sum_of_prices = all_prices | sum %}
+
+<p>total sum of all products is {{ sum_of_prices | money }}</p>
+
+{% assign coffee = products |  where: "title", "Black Coffee" | first %}
+
+<p>{{ coffee.title }} - {{ coffee.price | money }}</p>
+
+{% assign tags = "" %}
+{% for product in products %}
+        {% for tag in product.tags %}
+                {% assign tags = tags | append: tag |  append: " " %}
+        {% endfor %}
+{% endfor %}
+
+<p>{{ tags | split: ' ' |  uniq | split: ' ' }}</p>

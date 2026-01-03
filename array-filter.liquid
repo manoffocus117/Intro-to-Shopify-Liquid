@@ -1,1 +1,43 @@
-ECHO is on.
+{% comment %} creating array and split filter {% endcomment %}
+
+{% assign my_number = "1, 2, 3, 4, 5, 6" | split: ' ' %}
+
+{% for number in my_number%}
+        <p>{{ number }}</p>
+{% endfor %}
+
+
+
+{% comment %} array filter {% endcomment %}
+
+{% assign products = collection.products %}
+{% assign product_titles = products | map: "title" | reverse %}
+
+
+{% for product_title in product_titles%}
+        <p>{{ product_title }}</p>
+{% endfor %}
+
+
+<p>{{ product_titles | join: " - " }}</p>
+<p>{{ product_titles | first }}</p>
+<p>{{ product_titles | last }}</p>
+<p>{{ product_titles | size }}</p>
+
+<p>{{ product_titles.first }}</p>
+<p>{{ product_titles.last }}</p>
+<p>{{ product_titles.size }}</p>
+
+{% if product_titles.size > 10 %}
+        <p>{{ "this is a test" }}</p>
+{% endif %}
+
+{% for product in products %}
+        <p>{{ product.title }} - {{ product.price | money }}</p>
+{% endfor %}
+
+{% assign price_sorted_items = products | sort: "price"  %}
+
+{% for product in price_sorted_items %}
+        <p>{{ product.title }} - {{ product.price | money }}</p>
+{% endfor %}

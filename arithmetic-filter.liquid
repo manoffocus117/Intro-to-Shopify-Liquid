@@ -1,0 +1,51 @@
+{% comment %} arithmetic filter  {% endcomment %}
+
+{% assign my_number = 15 %} 
+{% assign my_new_number = my_number |  plus: 10 %} 
+{% assign my_new_number = my_number |  minus: 10 %} 
+{% assign my_new_number = my_number |  times: 10 %} 
+{% assign my_new_number = my_number |  divided_by: 3 %} 
+<h4>{{ my_new_number }}</h4> 
+
+
+ {% comment %} string to number conversion  {% endcomment %}
+
+{% assign my_number = "155" %}
+
+{% assign my_new_number = my_number |  plus: 0 %}
+
+{% if my_new_number > 50 %}
+        <h4>the number is greater than 50</h4>
+{% endif %}
+
+{% assign modulo_of_my_number = my_new_number |  modulo: 2 %}
+
+{% if modulo_of_my_number == 0 %}
+        <h4>the number is even</h4>
+        {% else %}
+                <h4>the number is odd</h4>
+{% endif %} 
+
+
+{% comment %} abs (absolute means negative to positive positive to negative)  {% endcomment %}
+{% assign abs_value = -113 |  abs %} 
+
+<h4>{{ abs_value }}</h4> 
+
+
+{% comment %} round means  {% endcomment %}
+{% assign my_rounded_number  = 1133.465544 |  round %}
+<h4>{{ my_rounded_number }}</h4> 
+
+{% comment %} floor means a complete integer number   {% endcomment %}
+
+{% assign my_floating_number = 1123.444550 | floor %}
+
+<h4>{{ my_floating_number }}</h4> 
+
+
+{% comment %} ceil means   {% endcomment %}
+
+{% assign my_ceil_number = 11223.366 | ceil %}
+
+<h4>{{ my_ceil_number }}</h4> 

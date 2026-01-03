@@ -1,0 +1,8 @@
+{% comment %} the sort filter {% endcomment %}
+
+{% assign all_prices = products |  map: "price" | sort %}
+
+{% for price in all_prices %}
+        <p>{{ price | money }}</p>
+{% endfor %}
+
