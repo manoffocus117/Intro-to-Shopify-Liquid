@@ -13,8 +13,8 @@
 Check installs:
 
 ```sh
-node -v
-npm -v
+node --version
+npm --version
 git --version
 ```
 
@@ -33,33 +33,17 @@ shopify version
 
 (If you prefer, use the native Shopify installers documented on Shopify’s site.)
 
-3) Authenticate to your store
-Login to your dev store:
+3) Create a new folder and pull theme to run :
 
 ```sh
-shopify login --store your-store.myshopify.com
-```
-
-Follow the browser prompts to connect your CLI session.
-
-4) Create or clone a theme
-To scaffold an official starter theme (e.g., Dawn):
-
-```sh
-shopify theme init my-theme
+mkdir my-theme
 cd my-theme
+shopify theme pull --store example-store-url.myshopify.com
+
 ```
 
-Or clone an existing theme repository with Git:
-
-```sh
-git clone <repo-url> my-theme
-cd my-theme
-```
-
-5) Start local development server
+4) Start local development server
 Run:
-
 
 ```sh
 shopify theme dev
@@ -67,7 +51,7 @@ shopify theme dev
 
 This serves the theme and opens a live preview tunnel to your store so you can see changes in real time.
 
-6) Edit Liquid files in your editor
+5) Edit Liquid files in your editor
 Open the project in VS Code:
 
 ```sh 
@@ -84,12 +68,13 @@ Recommended extensions:
 
 ● Tip: templates/, sections/, snippets/ are where Liquid files live.
 
-7) Linting & testing
+6) Linting & testing
+<br>
 ● Use the Theme Check VS Code extension or run a theme linter if you installed the Theme Check tool (Ruby gem or integrated tool).
 
 ● Test functionality on your dev store and with shopify theme dev open to verify real-world behavior.
 
-8) Deploy / push changes to a store
+7) Deploy / push changes to a store
 When ready:
 
 ```sh 
@@ -113,4 +98,5 @@ npm update -g @shopify/cli @shopify/theme
 ```
 
 ✅ Wrap-up
+<br>
 ● Install Node.js, Git, VS Code → install Shopify CLI → login → scaffold/clone a theme → run shopify theme dev → edit Liquid files and use Theme Check.
