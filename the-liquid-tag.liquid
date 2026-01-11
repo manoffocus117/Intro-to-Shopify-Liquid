@@ -1,1 +1,20 @@
-ECHO is on.
+{% comment %} the liquid tag
+liquid tags are used to perform logic and control flow in liquid templates. they are enclosed within {% and %} delimiters and can include various 
+types of tags such as control flow tags, iteration tags, variable assignment tags, and more. 
+{% endcomment %}
+
+{% assign my_number = 557 %}
+
+echo product.title
+{% comment %} echo is used to output content directly to the template {% endcomment %}
+
+{% liquid
+        assign my_number = 332;
+
+        for product in collection.products
+                echo "<p>" | append: product.title | append: "</p>"
+        endfor
+%}
+
+<p>{{ my_number }}</p>
+

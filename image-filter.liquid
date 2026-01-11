@@ -1,0 +1,9 @@
+{% comment %} image filter {% endcomment %}
+
+{{ collection.products.first.featured_image |  image_url: width: 500 , height: 500 |  image_tag}} 
+
+<img src="{{ "coffee_cup.jpg" | asset_img_url: "500x500" }}" alt="coffee cup" loading="eager" width="500" height="500"> 
+
+{{ collection.products.first.featured_image |  image_url: width: 500, height: 500 | image_tag }} 
+
+<img src="{{ collection.products.first.featured_image |  image_url: width: 500, height: 500 }}" alt="">

@@ -5,3 +5,41 @@
         {% assign language_color = language | split: '|' | last %}
         <p style="color: {{language_color}};">{{ language_name }}</p>
 {% endfor %} {% endcomment %}
+
+
+{% assign background_color = "#fff000" %}
+
+<div class="color_filter" style="background: {{ background_color |  color_lighten: 20 }}"></div>
+
+{% assign color1 = "#f2f0f0" %}
+{% assign color2 = "#0000ff" %}
+
+
+<div class="color_filter" style="background: {{ color1 |  color_mix: color2, 50 }};"></div>
+
+{% assign color3 = "rgb(0, 255, 0.70)" %}
+
+<p>{{ color3 | color_to_hex }}</p> {% endcomment %}
+
+{% comment %} color contrast filter {% endcomment %}
+
+<p>{{ '#ffffff' |  color_contrast: '#000000' }}, {{ '#f3f3f3' |  color_contrast: '#000000' }}</p>
+
+{% assign background_color = "#fff000" %}
+
+<div class="color_filter" style="background: {{ background_color |  color_lighten: 20 }}"></div>
+
+{% assign color1 = "#f2f0f0" %}
+{% assign color2 = "#0000ff" %}
+
+
+<div class="color_filter" style="background: {{ color1 |  color_mix: color2, 50 }};"></div>
+
+{% assign color3 = "rgb(0, 255, 0.70)" %}
+
+<p>{{ color3 | color_to_hex }}</p> {% endcomment %}
+
+{% comment %} color contrast filter {% endcomment %}
+
+<p>{{ '#ffffff' |  color_contrast: '#000000' }}, {{ '#f3f3f3' |  color_contrast: '#000000' }}</p>
+

@@ -1,1 +1,19 @@
-ECHO is on.
+ debugging in liquid 
+
+ <p>{{ collection.products.first | json }}</p>
+
+{% comment %} printing in console {% endcomment %}
+
+<script>
+        console.log( {{ collection.products.first | json }} )
+        console.log( "{{ collection.title }}" )
+</script>
+
+<p>{{ shop | json }}</p>
+
+{% comment %} shopify theme console log
+ 
+shop.name
+shopify theme console --url /collections/all
+
+{% endcomment %}

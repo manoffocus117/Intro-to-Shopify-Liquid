@@ -1,0 +1,25 @@
+{% comment %} JSON filter in liquid {% endcomment %}
+
+
+
+<style>
+        .highlight {
+                color: blue;
+                background: yellow;
+        }
+        .color_filter {
+                width: 50px;
+                height: 50px;
+                border-radius: 100%;
+                border: 1px solid #333;
+                display: block !important
+        }
+</style>
+
+{{ shop.name }}
+
+<p>{{ collection.description | default: "this is the default description" }}</p>
+
+<p>{{ "this is some text with more text" | highlight: 'text' }}</p>
+
+<p>Copyright {{ 'now'  |  date: '%Y-%m-%d' }}</p>

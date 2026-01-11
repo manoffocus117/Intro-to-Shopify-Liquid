@@ -1,0 +1,10 @@
+{{ "style.css" | asset_url | stylesheet_tag }}
+{% comment %} {{ "coffee_cup.jpg" | asset_img_url: "500x500" }} {% endcomment %}
+
+{% comment %} accessing files from assets folder {% endcomment %}
+<h1 class="heading_text">hello world</h1>
+
+<script src="{{ "script.js" | asset_url }}" defer></script> {% endcomment %}
+
+
+<img src="{{ "coffee_cup.jpg" | asset_img_url: "500x500" }}" alt="coffee cup" loading="eager" width="500" height="500"> 
